@@ -777,7 +777,6 @@ select:-webkit-autofill:focus {
 }
 
 
-
 /* ===================================================================
  * # buttons
  *
@@ -1471,8 +1470,8 @@ button::-moz-focus-inner, input::-moz-focus-inner {
  * ## main navigation 
  * ------------------------------------------------------------------- */
 .header-nav {
-    background: #0C0C0C;
-    color: rgba(255, 255, 255, 0.25);
+    background: white;
+    color:black;
     font-family: "montserrat-light", sans-serif;
     font-size: 1.3rem;
     line-height: 1.846;
@@ -1502,7 +1501,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 .header-nav a:hover,
 .header-nav a:focus,
 .header-nav a:active {
-    color: white;
+    color: black;
 }
 
 .header-nav h3 {
@@ -1542,7 +1541,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 
 .header-nav__list a,
 .header-nav__list a:visited {
-    color: #FFFFFF;
+    color: black;
 }
 
 .header-nav__social {
@@ -2098,14 +2097,8 @@ html.no-csstransitions .home-content__main {
     .home-content__main {
         max-width: 490px;
     }
-    .home-content__buttons {
-        padding-top: 1.2rem;
-        text-align: center;
-    }
     .home-content__buttons .btn {
-        display: block;
-        width: 70%;
-        margin: 1.5rem 0 0 0;
+        display: inline-flex;
     }
     .home-social {
         right: 4rem;
@@ -2155,12 +2148,8 @@ html.no-csstransitions .home-content__main {
         max-width: none;
         width: 85%;
     }
-    .home-content__buttons {
-        padding-top: 1.2rem;
-    }
     .home-content__buttons .btn {
-        width: auto;
-        margin: 1.5rem 0 0 0;
+        width: 170px;
     }
     .home-social {
         display: none;
@@ -2363,7 +2352,6 @@ html.no-csstransitions .home-content__main {
  * ------------------------------------------------------------------- */
 .s-services {
     padding-top: 10.2rem;
-    padding-bottom: 13.2rem;
     background-color: #FFFFFF;
     color: #757575;
     position: relative;
@@ -2941,7 +2929,7 @@ html.no-csstransitions .home-content__main {
     width: 100%;
     height: 100%;
     opacity: .8;
-    background-color: #151515;
+    background-color:#151515;
 }
 
 .s-contact .form-field {
@@ -3023,7 +3011,7 @@ html.no-csstransitions .home-content__main {
 .contact-content input[type="password"],
 .contact-content textarea,
 .contact-content select {
-    color: rgba(255, 255, 255, 0.6);
+    color: green;
     border-bottom: 1px solid rgba(255, 255, 255, 0.07);
     margin-bottom: .9rem;
 }
