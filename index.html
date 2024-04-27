@@ -178,12 +178,12 @@
 </section>
 
     
-    <section id="home" class="s-home target-section g" >
-        <div class="container" style="margin-left: 39px;">
+    <section id="home" class="s-home target-section g"  >
+        <div class="container" style="margin-left: 8%;margin-right:1%">
             <div class="row" style="display:flex;">
-                <div class="col-md-8 home-content__main q" style="text-align: justify;">
+                <div class="col-md-8 home-content__main q" >
                     <h1 id="Head" style="color: green;">Welcome to ADplication</h1>
-                    <h3 id="Head2" style="color: green; margin-top: -4px;">
+                    <h3 id="Head2" style="color: green; margin-top: -4px;text-align: justify;">
                         THE AGENCY ACCELERATING <br> YOUR JOURNEY FROM LISTING TO SELLING<br>
                     </h3>
                     <h4 style="color:black; margin-top: -4px; text-align: justify;">
@@ -465,7 +465,6 @@
         </div>
         <hr>
     </section> <!-- end services -->
-    <hr style="background-color:GREY;">
 
     <!-- works
     ================================================== -->
@@ -680,19 +679,19 @@
         <div class="row contact-content border-color" data-aos="fade-up">
             <div class="contact-primary">
                 <h3 class="h6">Send Us A Message</h3>
-                <form name="contactForm" id="contactForm1" method="post" action="send_email.php" novalidate="novalidate">
+                <form name="contactForm" id="contactForm" method="post" action="send_email.php" novalidate="novalidate">
                     <fieldset>
                         <div class="form-field">
                             <input name="contactName" type="text" id="contactName1" placeholder="Your Name" value="" minlength="2" required="" aria-required="true" class="full-width">
                         </div>
                         <div class="form-field">
-                            <input name="contactEmail" type="email" id="contactEmail1" placeholder="Your Email" value="" required="" aria-required="true" class="full-width">
+                            <input name="contactEmail" type="email" id="contactEmail" placeholder="Your Email" value="" required="" aria-required="true" class="full-width">
                         </div>
                         <div class="form-field">
-                            <input name="contactSubject" type="text" id="contactSubject1" placeholder="Subject" value="" class="full-width">
+                            <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="" class="full-width">
                         </div>
                         <div class="form-field">
-                            <textarea name="contactMessage" id="contactMessage1" placeholder="Your Message" rows="10" cols="50" required="" aria-required="true" class="full-width"></textarea>
+                            <textarea name="contactMessage" id="contactMessage" placeholder="Your Message" rows="10" cols="50" required="" aria-required="true" class="full-width"></textarea>
                         </div>
                         <div class="form-field">
                             <button type="submit" class="full-width btn--primary">Submit</button>
@@ -773,20 +772,10 @@
             </div> <!-- end contact-secondary -->
 
     </section> <!-- end s-contact -->
-    <section id="contact" class="s-contact">
-
-        <div class="overlay"></div>
-        <div class="contact__line"></div>
-
-        <div class="row section-header" data-aos="fade-up">
-            <div class="col-full">
-                <h3 class="subhead">Contact Us</h3>
-                <h1 class="display-2 display-2--light">Reach out for a new project or just say hello</h1>
-            </div>
-        </div>
+   
     <hr style="background-color:GREY;">
     <script>
-        document.getElementById("contactForm1").addEventListener("submit", function(event) {
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
             event.preventDefault();
             var formData = new FormData(this);
     
@@ -801,7 +790,7 @@
                             // Display success message
                             document.querySelector(".message-success").style.display = "block";
                             // Clear form fields
-                            document.getElementById("contactForm1").reset();
+                            document.getElementById("contactForm").reset();
                         } else {
                             // Display error message
                             document.querySelector(".message-warning").style.display = "block";
