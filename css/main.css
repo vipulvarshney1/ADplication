@@ -777,6 +777,7 @@ select:-webkit-autofill:focus {
 }
 
 
+
 /* ===================================================================
  * # buttons
  *
@@ -1259,12 +1260,15 @@ button::-moz-focus-inner, input::-moz-focus-inner {
  * responsive:
  * display headings
  * ------------------------------------------------------------------- */
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1280px) {
     .display-1 {
-        font-size: 7.2rem;
+        font-size: 6.2rem;
     }
     .display-2 {
         font-size: 3.2rem;
+    }
+    .home-content__buttons {
+        text-align: left;
     }
 }
 
@@ -1275,11 +1279,17 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     .display-2 {
         font-size: 3.0rem;
     }
+    .home-content__buttons {
+        text-align: center;
+    }
 }
 
 @media only screen and (max-width: 600px) {
     .display-1 {
-        font-size: 5rem;
+        font-size: 3.5rem;
+    }
+    .ll{
+        font-size: 8.5rem;
     }
     .display-2 {
         font-size: 2.8rem;
@@ -1289,9 +1299,13 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     }
 }
 
+
 @media only screen and (max-width: 400px) {
     .display-1 {
-        font-size: 4.2rem;
+        font-size: 3.2rem;
+    }
+    .ll{
+        font-size: 8.5rem;
     }
     .display-2 {
         font-size: 2.5rem;
@@ -1471,7 +1485,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
  * ------------------------------------------------------------------- */
 .header-nav {
     background: white;
-    color:black;
+    color: #0C0C0C;
     font-family: "montserrat-light", sans-serif;
     font-size: 1.3rem;
     line-height: 1.846;
@@ -1495,13 +1509,13 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 .header-nav a, .header-nav a:visited {
-    color: rgba(255, 255, 255, 0.5);
+    color: black;
 }
 
 .header-nav a:hover,
 .header-nav a:focus,
 .header-nav a:active {
-    color: black;
+    color: white;
 }
 
 .header-nav h3 {
@@ -1741,7 +1755,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
  * ------------------------------------------------------------------- */
 .s-home {
     width: 100%;
-    height: 66%;
+    height: 29%;
     min-height: 563px;
     background-color: transparent;
     position: relative;
@@ -1815,14 +1829,13 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 
 .home-content__buttons {
     padding-top: 0;
-    text-align: left;
 }
 
 .home-content__buttons .btn {
     width: 170px;
     border-color: #FFFFFF;
     color: #FFFFFF;
-    margin: 1.5rem 1.5rem 0 0;
+   
     letter-spacing: .25rem;
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
@@ -2097,8 +2110,14 @@ html.no-csstransitions .home-content__main {
     .home-content__main {
         max-width: 490px;
     }
+    .home-content__buttons {
+        padding-top: 1.2rem;
+        text-align: center;
+    }
     .home-content__buttons .btn {
-        display: inline-flex;
+        display: block;
+        width: 70%;
+        margin: 1.5rem 0 0 0;
     }
     .home-social {
         right: 4rem;
@@ -2148,8 +2167,12 @@ html.no-csstransitions .home-content__main {
         max-width: none;
         width: 85%;
     }
+    .home-content__buttons {
+        padding-top: 1.2rem;
+    }
     .home-content__buttons .btn {
-        width: 170px;
+        width: auto;
+        margin: 1.5rem 0 0 0;
     }
     .home-social {
         display: none;
@@ -2352,6 +2375,7 @@ html.no-csstransitions .home-content__main {
  * ------------------------------------------------------------------- */
 .s-services {
     padding-top: 10.2rem;
+    padding-bottom: 13.2rem;
     background-color: #FFFFFF;
     color: #757575;
     position: relative;
@@ -2929,7 +2953,7 @@ html.no-csstransitions .home-content__main {
     width: 100%;
     height: 100%;
     opacity: .8;
-    background-color:#151515;
+    background-color: #151515;
 }
 
 .s-contact .form-field {
@@ -3011,7 +3035,7 @@ html.no-csstransitions .home-content__main {
 .contact-content input[type="password"],
 .contact-content textarea,
 .contact-content select {
-    color: green;
+    color: rgba(255, 255, 255, 0.6);
     border-bottom: 1px solid rgba(255, 255, 255, 0.07);
     margin-bottom: .9rem;
 }
