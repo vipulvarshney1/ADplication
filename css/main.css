@@ -1,9 +1,4 @@
-/* =================================================================== 
- *
- *  Glint v1.0 Main Stylesheet
- *  11-20-2017
- *  ------------------------------------------------------------------
- *
+
  *  TOC:
  *  # base style overrides
  *      ## links
@@ -59,7 +54,7 @@
  * # base style overrides
  *
  * ------------------------------------------------------------------- */
-html {
+ html {
     font-size: 10px;
 }
 
@@ -1491,10 +1486,6 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     line-height: 1.846;
     padding: 3.6rem 3rem 3.6rem 3.6rem;
     height: 100%;
-    width: 280px;
-    position: fixed;
-    right: 0;
-    top: 0;
     z-index: 700;
     overflow-y: auto;
     overflow-x: hidden;
@@ -1505,7 +1496,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     -webkit-transform: translateX(100%);
     -ms-transform: translateX(100%);
     transform: translateX(100%);
-    visibility: hidden;
+   
 }
 
 .header-nav a, .header-nav a:visited {
