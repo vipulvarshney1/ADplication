@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html class="no-js" lang="en">
@@ -91,7 +92,14 @@
         });
     });
         
-        
+    document.querySelectorAll('a.smoothscroll').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
     </script>
     <style>
         .form-container div {
@@ -121,35 +129,134 @@
         wrapper1{
             display: none;
         }
-  }
+  }  body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-    </style>
+        .s-header {
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            height: 80px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-logo img {
+            height: 40px;
+        }
+
+        .header-logo p {
+            margin: 0 0 0 10px;
+            font-size: 1.2em;
+            color: green;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-nav__list {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-nav__list li {
+            margin: 0 15px;
+        }
+
+        .header-nav__list li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1em;
+            padding: 10px 0;
+        }
+
+        .header-nav__list li a:hover {
+            color: green;
+        }
+
+        .header-nav__social {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-nav__social li {
+            margin: 0 10px;
+        }
+
+        .header-nav__social li a {
+            color: #333;
+            font-size: 1.2em;
+        }
+
+        .header-nav__social li a:hover {
+            color: green;
+        }
+
+        .section {
+            padding: 60px 20px;
+            margin-top: 80px; /* Adjust this based on the height of the header */
+        }
+
+        .fixed-top {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+         </style>
 </head>
 <body id="top">
+   
     <section style="height: 200px;">
-    <header class="header-container">
-        <div class="header-logo">
-            <a class="site-logo" href="index.html">
-                <img src="images/avatars/Adplcation.png" alt="Homepage">
-                <p style="color: green;">
-                    <strong>ADplication</strong>
-                </p>
-            </a>
-        </div>
-        <nav class="header-nav">
-            <a href="#home" title="home">Home</a>
-            <a href="#about" title="about">About</a>
-            <a href="#services" title="services">Services</a>
-            <a href="#works" title="works">Works</a>
-            <a href="#clients" title="clients">Clients</a>
-            <a href="#contact" title="contact">Contact</a>
-        </nav>
-    </header>
-    <!-- home
-    ================================================== -->
-</section>
-
-    
+        <header class="s-header fixed-top" style="height: 135px;">
+            <div class="header-logo">
+                <a class="site-logo" href="index.html">
+                    <img src="images/avatars/Adplcation.png" alt="Homepage" style="margin-top: -27px;
+                    height: 109px;
+                    margin-left: 10px;
+                    align-self: center;">
+                    <p><strong>ADplication</strong></p>
+                </a>
+            </div>
+            <nav class="header-nav">
+                <ul class="header-nav__list">
+                    <li class="current"><a class="smoothscroll" href="#home" title="home">Home</a></li>
+                    <li><a class="smoothscroll" href="#about" title="about">About</a></li>
+                    <li><a class="smoothscroll" href="#services" title="services">Services</a></li>
+                    <li><a class="smoothscroll" href="#works" title="works">Works</a></li>
+                    <li><a class="smoothscroll" href="#clients" title="clients">Clients</a></li>
+                    <li><a class="smoothscroll" href="#contact" title="contact">Contact</a></li>
+                </ul>
+                <ul class="header-nav__social">
+                    <li>
+                        <a href="https://www.linkedin.com/company/ad-plication/about/?viewAsMember=true" target="_blank">
+                            <i style="color:green" class="fa fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </section>    
     <section id="home" class="s-home target-section g" >
         <div class="container" style="margin-left: 2%;margin-right: 1%;">
             <div class="row" style="display:flex;">
@@ -436,119 +543,103 @@
 <hr style="color:grey">
     <!-- works
     ================================================== -->
+    <style>
+        .project-margin {
+            margin: 20px 0;
+        }
+    </style>
+    
     <section id='works' class="s-works">
-
         <div class="intro-wrap">
-                
             <div class="row section-header has-bottom-sep light-sep" data-aos="fade-up">
                 <div class="col-full">
                     <h3 class="subhead">Recent Works</h3>
                     <h1 class="display-2 display-2--light">We love what we do, check out some of our latest works</h1>
                 </div>
             </div> <!-- end section-header -->
-
         </div> <!-- end intro-wrap -->
-
-        <div class="row works-content">
-            <div class="col-full masonry-wrap">
-                <div class="masonry">
     
-                    <div class="masonry__brick" data-aos="fade-up">
+        <div class="row works-content">
+            <div class="col-full">
+                
+                <!-- Project 1 -->
+                <div class="row masonry__brick project-margin" data-aos="fade-up">
+                    <div class="col-md-12">
                         <div class="item-folio">
-                                
                             <div class="item-folio__thumb">
                                 <a href="images/clients/WhatsApp Image 2024-04-16 at 15.44.27_83531b49.jpg" class="thumb-link" title="Flipkart Marketing Dashboard" data-size="1050x700">
                                     <img src="images/clients/WhatsApp Image 2024-04-16 at 15.44.27_83531b49.jpg" 
                                          srcset="images/clients/WhatsApp Image 2024-04-16 at 15.44.27_83531b49.jpg 1x, images/clients/WhatsApp Image 2024-04-16 at 15.44.27_83531b49.jpg 2x" alt="Flipkart Dashboard">
                                 </a>
                             </div>
-    
                             <div class="item-folio__text">
-                                <h3 class="item-folio__title">
-                                    Flipkart
-                                </h3>
-                                <p class="item-folio__cat">
-                                    Flipkart Marketing Dashboard
-                                </p>
+                                <h3 class="item-folio__title">Flipkart</h3>
+                                <p class="item-folio__cat">Flipkart Marketing Dashboard</p>
                             </div>
-    
                             <a href="#" class="item-folio__project-link" title="Project link">
                                 <i class="icon-link"></i>
                             </a>
-    
                             <div class="item-folio__caption">
                                 <p>Getting a glimpse of what we can offer to our client on the Flipkart Marketing dashboard.</p>
                             </div>
-    
                         </div>
-                    </div> <!-- end masonry__brick -->
-
-                    <div class="masonry__brick" data-aos="fade-up">
+                    </div>
+                </div> <!-- end row masonry__brick -->
+    
+                <!-- Project 2 -->
+                <div class="row masonry__brick project-margin" data-aos="fade-up">
+                    <div class="col-md-12">
                         <div class="item-folio">
-                                
                             <div class="item-folio__thumb">
                                 <a href="images/clients/WhatsApp Image 2024-04-16 at 15.45.52_441eb724.jpg" class="thumb-link" title="Google Ads Dashboard" data-size="1050x700">
                                     <img src="images/clients/WhatsApp Image 2024-04-16 at 15.45.52_441eb724.jpg" 
                                          srcset="images/clients/WhatsApp Image 2024-04-16 at 15.45.52_441eb724.jpg 1x, images/clients/WhatsApp Image 2024-04-16 at 15.45.52_441eb724.jpg 2x" alt="Google Ads Dashboard">
                                 </a>
                             </div>
-    
                             <div class="item-folio__text">
-                                <h3 class="item-folio__title">
-                                    Google Ads 
-                                </h3>
-                                <p class="item-folio__cat">
-                                    Google Ads Dashboard
-                                </p>
+                                <h3 class="item-folio__title">Google Ads</h3>
+                                <p class="item-folio__cat">Google Ads Dashboard</p>
                             </div>
-    
                             <a href="#" class="item-folio__project-link" title="Project link">
                                 <i class="icon-link"></i>
                             </a>
-    
                             <div class="item-folio__caption">
                                 <p>Getting a glimpse of what we can offer our clients on Google ads and how we can perform holistic development of brand.</p>
                             </div>
-    
                         </div>
-                    </div> <!-- end masonry__brick -->
+                    </div>
+                </div> <!-- end row masonry__brick -->
     
-                    <div class="masonry__brick" data-aos="fade-up">
+                <!-- Project 3 -->
+                <div class="row masonry__brick project-margin" data-aos="fade-up">
+                    <div class="col-md-12">
                         <div class="item-folio">
-                                
                             <div class="item-folio__thumb">
                                 <a href="images/clients/WhatsApp Image 2024-04-16 at 15.47.01_d12e8a78.jpg" class="thumb-link" title="Amazon-Dashboard" data-size="1050x700">
                                     <img src="images/clients/WhatsApp Image 2024-04-16 at 15.47.01_d12e8a78.jpg"
                                          srcset="images/clients/WhatsApp Image 2024-04-16 at 15.47.01_d12e8a78.jpg 1x, images/clients/WhatsApp Image 2024-04-16 at 15.47.01_d12e8a78.jpg 2x" alt="Amazon Dashboard">
                                 </a>
                             </div>
-    
                             <div class="item-folio__text">
-                                <h3 class="item-folio__title">
-                                    Amazon Ads
-                                </h3>
-                                <p class="item-folio__cat">
-                                    Amazon Ads Dashboard
-                                </p>
+                                <h3 class="item-folio__title">Amazon Ads</h3>
+                                <p class="item-folio__cat">Amazon Ads Dashboard</p>
                             </div>
-    
                             <a href="#" class="item-folio__project-link" title="Project link">
                                 <i class="icon-link"></i>
                             </a>
-    
                             <div class="item-folio__caption">
                                 <p>Getting a glimpse of what we can offer to our clients on Amazon ads and how we can perform 360 development of brand through multiple channels.</p>
                             </div>
-    
                         </div>
-                    </div> <!-- end masonry__brick -->
+                    </div>
+                </div> <!-- end row masonry__brick -->
     
-                </div>
             </div> <!-- end col-full -->
         </div> <!-- end works-content -->
-
     </section> <!-- end s-works -->
-    <hr style="background-color:GREY;">
+    
+    
+     <hr style="background-color:GREY;">
 
     <!-- clients
     ================================================== -->
@@ -579,9 +670,13 @@
         </div> <!-- end clients-outer -->
 
         <div class="row clients-testimonials" data-aos="fade-up" style="text-align: justify;">
+            
+                <h1 class="col-full" style="text-align: center;margin-top: -10PX;">Testimonials</h1>
+            
             <div class="col-full">
+                
                 <div class="testimonials">
-
+                    
                     <div class="testimonials__slide">
 
                         <p>Having been through a number of digital marketing agencies I was sceptical about employing another, but I have to say Ad-Plication are a breath of fresh air.
@@ -644,7 +739,7 @@
             </div>
         </div>
 
-        <div class="row contact-content border-color" data-aos="fade-up">
+        <div class="row contact-content border-color" data-aos="fade-up" style="margin-left: 20%;">
             <div class="contact-primary">
                 <h3 class="h6">Send Us A Message</h3>
                 <form name="contactForm" id="contactForm" method="post" action="send_email.php" novalidate="novalidate">
@@ -663,14 +758,6 @@
                         </div>
                         <div class="form-field">
                             <button type="submit" class="full-width btn--primary">Submit</button>
-                            <div class="submit-loader">
-                                <div class="text-loader">Sending...</div>
-                                <div class="s-loader">
-                                    <div class="bounce1"></div>
-                                    <div class="bounce2"></div>
-                                    <div class="bounce3"></div>
-                                </div>
-                            </div>
                         </div>
                     </fieldset>
                 </form>
